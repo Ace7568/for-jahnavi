@@ -9,10 +9,15 @@
 <body>
   <div class="hearts" aria-hidden="true"></div>
 
+  <!-- Music toggle (floating) -->
+  <button id="musicBtn" class="music-btn" title="Play / pause music" aria-label="Toggle music">
+    <span id="musicIcon">🎵</span>
+  </button>
+
   <main class="card">
     <p class="eyebrow">From Jay, with all my heart</p>
     <h1>Jahnavi</h1>
-    <p class="tagline">you are the best thing that ever happened to me</p>
+    <p class="tagline"><span id="typed"></span><span class="cursor">|</span></p>
 
     <section class="message">
       <p>
@@ -27,12 +32,21 @@
 
     <div class="reasons">
       <h2>Why you're the best for me</h2>
+      <p class="hint">(tap a card 💞)</p>
       <ul>
-        <li>Your smile makes everything better ✨</li>
-        <li>You understand me like no one else 💫</li>
-        <li>You make me want to be a better person 🌹</li>
-        <li>Every moment with you feels like home 🏡</li>
+        <li class="reason" data-back="...and I fall for it every single time 😍">Your smile makes everything better ✨</li>
+        <li class="reason" data-back="even the words I never say out loud 💬">You understand me like no one else 💫</li>
+        <li class="reason" data-back="you make me want to give you the world 🌍">You make me want to be a better person 🌹</li>
+        <li class="reason" data-back="wherever you are, that's where I belong 🏡">Every moment with you feels like home 🏡</li>
       </ul>
+    </div>
+
+    <!-- Love meter -->
+    <div class="meter-box">
+      <h2>How much do I love you?</h2>
+      <button id="meterBtn" class="love-btn">Measure my love 💘</button>
+      <div class="meter-track"><div id="meterFill" class="meter-fill"></div></div>
+      <p id="meterText" class="meter-text"></p>
     </div>
 
     <button id="loveBtn" class="love-btn">Press for a little surprise 💝</button>
@@ -43,6 +57,9 @@
       <p class="signature">Jay ❤️</p>
     </footer>
   </main>
+
+  <!-- Optional: drop a file named song.mp3 next to this page and it becomes the music -->
+  <audio id="songFile" src="song.mp3" loop preload="none"></audio>
 
   <script src="script.js"></script>
 </body>
