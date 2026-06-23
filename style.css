@@ -1,0 +1,143 @@
+:root {
+  --pink: #ff5e8a;
+  --deep: #c2185b;
+  --soft: #fff0f5;
+  --text: #4a2c38;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", -apple-system, system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffd6e8 0%, #ffe9f3 50%, #fff5fb 100%);
+  color: var(--text);
+  padding: 24px;
+  overflow-x: hidden;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+  padding: 48px 40px;
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(194, 24, 91, 0.18);
+  border: 1px solid rgba(255, 94, 138, 0.2);
+  animation: rise 0.9s ease-out;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.75rem;
+  color: var(--pink);
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 3.4rem;
+  color: var(--deep);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.tagline {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--pink);
+  margin-bottom: 28px;
+}
+
+.message p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.message strong { color: var(--deep); }
+
+.reasons {
+  margin: 28px 0;
+  text-align: left;
+}
+
+.reasons h2 {
+  font-size: 1.2rem;
+  color: var(--deep);
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.reasons ul { list-style: none; }
+
+.reasons li {
+  background: var(--soft);
+  padding: 12px 18px;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  border-left: 4px solid var(--pink);
+}
+
+.love-btn {
+  margin-top: 12px;
+  background: linear-gradient(135deg, var(--pink), var(--deep));
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 8px 20px rgba(255, 94, 138, 0.4);
+}
+
+.love-btn:hover { transform: scale(1.05); box-shadow: 0 12px 28px rgba(255, 94, 138, 0.55); }
+.love-btn:active { transform: scale(0.98); }
+
+.surprise {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: var(--deep);
+  font-weight: 600;
+  min-height: 28px;
+}
+
+footer { margin-top: 32px; }
+footer p { font-size: 1rem; }
+.signature {
+  font-size: 1.6rem;
+  color: var(--deep);
+  margin-top: 4px;
+}
+
+/* floating hearts */
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.floating-heart {
+  position: fixed;
+  bottom: -40px;
+  font-size: 1.5rem;
+  animation: float-up linear forwards;
+  opacity: 0.8;
+}
+
+@keyframes float-up {
+  to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
